@@ -8,8 +8,8 @@ export default function Hero() {
   return (
     <section id="top" className="relative isolate min-h-screen overflow-hidden bg-obsidian text-limestone">
       <img
-        src="/images/travertine-lounge.jpg"
-        alt="Double-height lounge with book-matched travertine wall and warm cove lighting"
+        src="/images/Hall_1.jpg"
+        alt="Contemporary hall with custom architectural cabinetry"
         className="absolute inset-0 h-full w-full object-cover object-center"
         decoding="async"
       />

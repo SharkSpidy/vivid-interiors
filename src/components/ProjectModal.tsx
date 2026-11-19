@@ -84,7 +84,7 @@ export default function ProjectModal({ project, onClose, onInquire }: ProjectMod
                   />
                 </div>
                 <div className="mt-3 grid grid-cols-3 gap-3">
-                  {project.gallery.slice(0, 3).map((src, index) => (
+                  {project.gallery.map((src, index) => (
                     <button
                       key={`${src}-${index}`}
                       type="button"
