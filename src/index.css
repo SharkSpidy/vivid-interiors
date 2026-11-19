@@ -1,0 +1,111 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --obsidian: #0b0a09;
+  --espresso: #141210;
+  --limestone: #f6f3ee;
+  --sand: #ede7dd;
+  --gold: #c5b38e;
+  --gold-deep: #a8956f;
+  --ink: #181614;
+  --ink-muted: #6b655e;
+  --dark-muted: #a39b90;
+  --ease-architectural: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-limestone font-sans text-ink;
+    font-weight: 400;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-display font-light;
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  ::selection {
+    background: var(--gold);
+    color: var(--obsidian);
+  }
+
+  :focus-visible {
+    outline: 1px solid var(--gold);
+    outline-offset: 4px;
+  }
+
+  input,
+  select,
+  textarea,
+  button {
+    font: inherit;
+  }
+}
+
+@layer components {
+  .container-editorial {
+    @apply mx-auto w-full max-w-editorial px-6 md:px-10 lg:px-16;
+  }
+
+  .meta-label {
+    @apply font-sans text-[10px] font-medium uppercase tracking-meta;
+  }
+
+  .hairline-gold {
+    @apply border-gold/20;
+  }
+
+  .hairline-ink {
+    @apply border-ink/[0.12];
+  }
+
+  .link-underline {
+    @apply relative inline-block after:absolute after:-bottom-1 after:left-0 after:h-px after:w-full after:origin-left after:scale-x-0 after:bg-current after:transition-transform after:duration-500 after:ease-architectural hover:after:scale-x-100;
+  }
+
+  .field {
+    @apply w-full rounded-none border border-ink/15 bg-transparent px-4 py-3 text-sm text-ink placeholder:text-ink-muted/70 transition-colors duration-300 ease-architectural focus:border-gold focus:outline-none focus:ring-0;
+  }
+
+  .field-error {
+    @apply border-[#8C3B2E];
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-3 rounded-none bg-ink px-7 py-4 text-ink transition-colors duration-500 ease-architectural;
+  }
+
+  .btn-primary:hover {
+    @apply bg-gold-deep text-obsidian;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
